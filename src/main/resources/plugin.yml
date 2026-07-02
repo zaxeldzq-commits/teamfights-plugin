@@ -1,0 +1,22 @@
+name: Teamfights
+version: '1.0.0'
+main: gg.hcfclone.teamfights.TeamfightsPlugin
+api-version: '1.21'
+author: Claude
+description: Teamfights estilo HCF (NethPot) con clase Bard balanceada y sistema de teams.
+
+commands:
+  team:
+    description: Sistema de teams
+    usage: /team <create|invite|accept|leave|disband|list|info|ff>
+    aliases: [t, teams]
+  bard:
+    description: Obtener el kit de la clase Bard
+    usage: /bard
+  claim:
+    description: Sistema de claims (territorios de team)
+    usage: /claim <create <tamaño>|info|delete>
+  teamfights:
+    description: Comando admin del plugin
+    usage: /teamfights reload
+    aliases: [tf]

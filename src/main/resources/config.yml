@@ -1,0 +1,139 @@
+# =========================================================
+#  Teamfights - Config
+# =========================================================
+
+teams:
+  friendly-fire: false
+  max-members: 8
+  data-file: "teams.yml"
+
+combat:
+  enable-damage-cap: true
+  max-damage-percent: 0.55
+
+# =========================================================
+# ENERGÍA (recurso para usar los "burst" del bard)
+# =========================================================
+energy:
+  max: 100
+  regen-per-second: 4
+  show-bossbar: true
+  bossbar-color: PURPLE   # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+
+# =========================================================
+# CLASES POR ARMADURA (old HCF style)
+# Necesitas el set COMPLETO (casco+pecho+piernas+botas) puesto.
+# Los efectos se refrescan solos y se quitan apenas te sacas
+# alguna pieza del set.
+# =========================================================
+classes:
+  bard_armor:
+    armor-material: GOLDEN     # set completo de oro
+    display-name: "&6&lBard (Armadura)"
+    effects:
+      - effect: DAMAGE_RESISTANCE
+        amplifier: 1            # Resistencia II
+      - effect: REGENERATION
+        amplifier: 0            # Regeneración I
+      - effect: SPEED
+        amplifier: 1            # Velocidad II
+  archer_armor:
+    armor-material: LEATHER    # set completo de cuero
+    display-name: "&e&lArcher (Armadura)"
+    effects:
+      - effect: SPEED
+        amplifier: 2            # Velocidad III
+      - effect: DAMAGE_RESISTANCE
+        amplifier: 1            # Resistencia II
+
+# =========================================================
+# BARD - items que se sostienen en la MANO PRINCIPAL (no offhand).
+# - "passive": efecto mientras lo sostienes.
+# - "burst": efecto más fuerte y corto al hacer click derecho,
+#   con cooldown + costo de energía.
+# =========================================================
+bard:
+  items:
+    blaze_powder:
+      material: BLAZE_POWDER
+      custom-name: "&c&lPolvo de Blaze"
+      lore:
+        - "&7Sostenlo en tu mano principal"
+        - "&7para &cFuerza I"
+        - ""
+        - "&7Click derecho: &cFuerza II &7(6s)"
+      passive-effect: STRENGTH
+      passive-amplifier: 0      # Fuerza I
+      burst-effect: STRENGTH
+      burst-amplifier: 1        # Fuerza II
+      burst-duration-seconds: 6
+      cooldown-seconds: 20
+      energy-cost: 30
+    ghast_tear:
+      material: GHAST_TEAR
+      custom-name: "&d&lLágrima de Ghast"
+      lore:
+        - "&7Sostenlo en tu mano principal"
+        - "&7para &dRegeneración I"
+        - ""
+        - "&7Click derecho: &dRegeneración III &7(6s)"
+      passive-effect: REGENERATION
+      passive-amplifier: 0      # Regeneración I
+      burst-effect: REGENERATION
+      burst-amplifier: 2        # Regeneración III
+      burst-duration-seconds: 6
+      cooldown-seconds: 25
+      energy-cost: 35
+    sugar:
+      material: SUGAR
+      custom-name: "&f&lAzúcar"
+      lore:
+        - "&7Sostenlo en tu mano principal"
+        - "&7para &bVelocidad II"
+        - ""
+        - "&7Click derecho: &bVelocidad III &7(6s)"
+      passive-effect: SPEED
+      passive-amplifier: 1      # Velocidad II
+      burst-effect: SPEED
+      burst-amplifier: 2        # Velocidad III
+      burst-duration-seconds: 6
+      cooldown-seconds: 20
+      energy-cost: 25
+    iron_ingot:
+      material: IRON_INGOT
+      custom-name: "&7&lLingote de Hierro"
+      lore:
+        - "&7Sostenlo en tu mano principal"
+        - "&7para &7Resistencia I"
+        - ""
+        - "&7Click derecho: &7Resistencia III &7(6s)"
+      passive-effect: DAMAGE_RESISTANCE
+      passive-amplifier: 0      # Resistencia I
+      burst-effect: DAMAGE_RESISTANCE
+      burst-amplifier: 2        # Resistencia III
+      burst-duration-seconds: 6
+      cooldown-seconds: 25
+      energy-cost: 35
+    feather:
+      material: FEATHER
+      custom-name: "&f&lPluma"
+      lore:
+        - "&7Sostenlo en tu mano principal"
+        - "&7para &aSalto III"
+        - ""
+        - "&7Click derecho: &aSalto VII &7(6s)"
+      passive-effect: JUMP
+      passive-amplifier: 2      # Salto III
+      burst-effect: JUMP
+      burst-amplifier: 6        # Salto VII
+      burst-duration-seconds: 6
+      cooldown-seconds: 20
+      energy-cost: 20
+
+# =========================================================
+# CLAIMS (territorios de team)
+# =========================================================
+claims:
+  data-file: "claims.yml"
+  min-size: 5
+  max-size: 40
